@@ -1,5 +1,8 @@
 <template>
-  <AppBar />
+  <v-app theme="dark">
+    <AppBar />
+
+  </v-app>
 </template>
 
 <script>
@@ -10,3 +13,10 @@ export default {
   },
 };
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500&display=swap');
+*{
+  font-family: Vazirmatn;
+}
+</style>
