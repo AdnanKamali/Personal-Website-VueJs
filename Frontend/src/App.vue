@@ -11,7 +11,7 @@
     <section :class="customClass">
 
     <div>
-      Ali Hasten
+      section 2
     </div>
     </section>
   </v-app>
