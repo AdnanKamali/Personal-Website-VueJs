@@ -1,11 +1,13 @@
 <template>
-  <v-app theme="dark">
+  <v-app :theme="mainTheme">
+
     <section :class="customClass">
+
     <WhoAmI/>
     </section>
     <AppBar />
   </v-app>
-  <v-app theme="dark">
+  <v-app :theme="mainTheme">
     <section :class="customClass">
 
     <div>
@@ -20,10 +22,21 @@
 <script>
 import AppBar from "./components/AppBar.vue";
 import WhoAmI from "./pages/WhoAmI.vue";
+import {useDisplay} from "vuetify";
 import {mapGetters} from "vuex";
 
 export default {
+  provide(){
+    return {
+      breakePoint: this.cssClassResponsive,
+    }
+  },
+  data(){
+    return {
+    mainTheme: "dark",
 
+    }
+  },
   components: {
     WhoAmI,
     AppBar,
@@ -33,7 +46,16 @@ export default {
     customClass(){
       return {'ml-16':this.isDesktop, 'mt-16':!this.isDesktop}
     }
-  }
+  },
+   methods:{
+     cssClassResponsive(desktop, mobile){
+       const isDesktop = useDisplay().lgAndUp.value;
+       const style = {};
+       style[desktop] = isDesktop
+       style[mobile] = !isDesktop
+       return style;
+     }
+   }
 };
 </script>
 

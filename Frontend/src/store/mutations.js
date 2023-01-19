@@ -1,7 +1,15 @@
-const mutations = {
-    cssClassResponsive(state,payload){
+import {useDisplay} from "vuetify";
 
-        return {desktop:this.isDesktop, mobile:!this.isDesktop};
+const mutations = {
+    cssClassResponsive(_,payload){
+        const desktop = payload[0];
+        const mobile = payload[1];
+        const isDesktop = useDisplay().lgAndUp.value;
+        const style = {};
+        style[desktop] = isDesktop
+        style[mobile] = !isDesktop
+        console.log(style);
+        return style;
     }
 }
 export default mutations;
