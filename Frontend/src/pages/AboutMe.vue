@@ -1,5 +1,5 @@
 <template>
-  <v-card :class="breakePoint('w-100', 'w-50')" class="ma-auto">
+  <v-card :class="breakePoint('w-100', 'w-100')" class="ma-auto">
     <v-card-title>
       ― MY BACKGROUND
     </v-card-title>

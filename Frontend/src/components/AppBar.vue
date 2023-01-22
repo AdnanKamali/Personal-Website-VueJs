@@ -81,9 +81,9 @@ export default {
     return {
       drawer: false,
       items: [
-        { title: "من کی هستم", value: "Dsh", icon: "person" },
-        { title: "مهارت ها", value: "St", icon: "category" },
-        { title: "ارتباط با من", value: "As", icon: "contacts" },
+        { title: "My Background", value: "Dsh", icon: "person" },
+        { title: "Skills", value: "Sk", icon: "category" },
+        { title: "Contact Me", value: "As", icon: "contacts" },
       ],
     };
   },

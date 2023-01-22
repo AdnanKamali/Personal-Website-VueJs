@@ -10,7 +10,7 @@
   </v-container>
   <v-container>
 
-    <section :class="customClass"
+    <section id="info-sec" :class="customClass"
     v-motion
     :initial="{opacity: 0, y:100}"
     :visibleOnce="{
@@ -24,10 +24,8 @@
     },
   }"
     >
-      <v-container>
       <AboutMe/>
-
-      </v-container>
+      <MySkills/>
     </section>
   </v-container>
     </v-main>
@@ -42,6 +40,7 @@
 import AppBar from "./components/AppBar.vue";
 import WhoAmI from "./pages/WhoAmI.vue";
 import AboutMe from "./pages/AboutMe.vue";
+import MySkills from "./pages/MySkills.vue";
 import {useDisplay} from "vuetify";
 import {mapGetters} from "vuex";
 
@@ -55,6 +54,7 @@ export default {
     WhoAmI,
     AppBar,
     AboutMe,
+    MySkills,
   },
   computed:{
     ...mapGetters(["isDesktop", "isDark"]),
@@ -62,15 +62,15 @@ export default {
       return {'ml-16':this.isDesktop, 'mt-16':!this.isDesktop}
     }
   },
-   methods:{
-     cssClassResponsive(desktop, mobile){
+   methods: {
+     cssClassResponsive(desktop, mobile) {
        const isDesktop = useDisplay().lgAndUp.value;
        const style = {};
        style[desktop] = isDesktop
        style[mobile] = !isDesktop
        return style;
-     }
-   },
+     },
+   }
 };
 </script>
 

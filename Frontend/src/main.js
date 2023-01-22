@@ -3,7 +3,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import vuetify from "./vuetify.js";
 import store from "./store/index";
-import {MotionPlugin} from "@vueuse/motion"
+import {MotionPlugin} from "@vueuse/motion";
 
 
 
