@@ -4,7 +4,11 @@ import mutations from "./mutations.js";
 
 
 const store = createStore({
-
+    state(){
+        return {
+            isDark: false,
+        };
+    },
     getters:getters,
     mutations:mutations,
 })

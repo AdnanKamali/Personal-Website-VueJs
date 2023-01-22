@@ -51,19 +51,13 @@ export default {
       breakePoint: this.cssClassResponsive,
     }
   },
-  data(){
-    return {
-    isDark: true,
-
-    }
-  },
   components: {
     WhoAmI,
     AppBar,
     AboutMe,
   },
   computed:{
-    ...mapGetters(["isDesktop"]),
+    ...mapGetters(["isDesktop", "isDark"]),
     customClass(){
       return {'ml-16':this.isDesktop, 'mt-16':!this.isDesktop}
     }

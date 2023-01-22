@@ -17,13 +17,19 @@
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-                <v-list-item
-                  v-for="item in items"
-                  :key="item.icon"
-                  :title="item.title"
-                  :prepend-icon="item.icon"
-                  :value="item.value"
-                />
+           <v-list-item
+             v-for="item in items"
+             :key="item.icon"
+             :title="item.title"
+             :prepend-icon="item.icon"
+             :value="item.value"
+          />
+          <v-list-item
+              :title="isDark?'Dark Mode':'Light Mode'"
+              :prepend-icon="isDark?'dark_mode':'light_mode'"
+
+              @click="changeTheme"
+          />
         </v-list>
       </v-navigation-drawer>
 
@@ -55,14 +61,19 @@
         :append-icon="item.icon"
         :value="item.value"
       />
-
+      <v-list-item
+          :title="isDark?'Dark Mode':'Light Mode'"
+          :append-icon="isDark?'dark_mode':'light_mode'"
+          value="dark"
+          @click="changeTheme"
+      />
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
 
-import {mapGetters} from "vuex";
+import {mapGetters, mapMutations} from "vuex";
 
 export default {
 
@@ -77,8 +88,10 @@ export default {
     };
   },
   computed:{
-    ...mapGetters(["isDesktop"]),
+    ...mapGetters(["isDesktop", "isDark"]),
   },
-
+  methods:{
+    ...mapMutations(["changeTheme"])
+  }
 };
 </script>

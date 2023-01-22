@@ -10,6 +10,9 @@ const mutations = {
         style[mobile] = !isDesktop
         console.log(style);
         return style;
+    },
+    changeTheme(state){
+        state.isDark = !state.isDark;
     }
 }
 export default mutations;
