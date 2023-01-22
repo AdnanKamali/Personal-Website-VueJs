@@ -1,19 +1,38 @@
 <template>
-  <v-app :theme="mainTheme">
-
-    <section :class="customClass">
-
-    <WhoAmI/>
+  <v-app :theme="isDark? 'dark': 'myCustomLightTheme'">
+    <v-main>
+  <v-container>
+  <transition name="first" appear>
+    <section :class="customClass" class="mb-15">
+      <WhoAmI/>
     </section>
+  </transition>
+  </v-container>
+  <v-container>
+
+    <section :class="customClass"
+    v-motion
+    :initial="{opacity: 0, y:100}"
+    :visibleOnce="{
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'easeOut',
+      stiffness: 250,
+      damping: 25,
+      mass: 3,
+    },
+  }"
+    >
+      <v-container>
+      <AboutMe/>
+
+      </v-container>
+    </section>
+  </v-container>
+    </v-main>
+
     <AppBar />
-  </v-app>
-  <v-app :theme="mainTheme">
-    <section :class="customClass">
-
-    <div>
-      section 2
-    </div>
-    </section>
   </v-app>
 
 
@@ -22,6 +41,7 @@
 <script>
 import AppBar from "./components/AppBar.vue";
 import WhoAmI from "./pages/WhoAmI.vue";
+import AboutMe from "./pages/AboutMe.vue";
 import {useDisplay} from "vuetify";
 import {mapGetters} from "vuex";
 
@@ -33,13 +53,14 @@ export default {
   },
   data(){
     return {
-    mainTheme: "dark",
+    isDark: true,
 
     }
   },
   components: {
     WhoAmI,
     AppBar,
+    AboutMe,
   },
   computed:{
     ...mapGetters(["isDesktop"]),
@@ -55,7 +76,7 @@ export default {
        style[mobile] = !isDesktop
        return style;
      }
-   }
+   },
 };
 </script>
 
@@ -63,5 +84,17 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500&display=swap');
 *{
   font-family: Vazirmatn;
+}
+
+.first-enter-from{
+  opacity: 0;
+  transform: translateY(60px);
+}
+.first-enter-to{
+  opacity: 1;
+  transform: translateY(0);
+}
+.first-enter-active{
+  transition: all 0.4s ease-in;
 }
 </style>

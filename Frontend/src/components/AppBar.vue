@@ -1,7 +1,7 @@
 <template>
 <!--Desktop navigation-->
   <v-card v-if="isDesktop" class="position-fixed h-100">
-    <v-layout class="position-fixed w-25 h-100">
+    <v-layout class="position-fixed w-25 h-100 ">
       <v-navigation-drawer
           expand-on-hover
           rail
@@ -40,7 +40,7 @@
     <v-app-bar-title class="d-flex justify-start"> I'm Adnan </v-app-bar-title>
     <v-app-bar-nav-icon :icon="!drawer?'menu':'close'" @click.stop="drawer = !drawer" />
   </v-app-bar>
-  <v-navigation-drawer v-if="!isDesktop" location="right" color="black" v-model="drawer" style="top:0;" class="fill-height pt-16">
+  <v-navigation-drawer v-if="!isDesktop" location="right" v-model="drawer" style="top:0;" class="fill-height pt-16">
     <v-list>
       <v-list-item
         prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
