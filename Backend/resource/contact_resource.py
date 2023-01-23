@@ -25,6 +25,6 @@ class ContactResource(Resource):
         contact_message = ContactModel(**data)
         try:
             contact_message.save()
-            return {"message": "your message sended!!"}, 201
+            return {"message": "your message recived!!"}, 201
         except:
             return {"error": "sorry we have some problem"}, 500
