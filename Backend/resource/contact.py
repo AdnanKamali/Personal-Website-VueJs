@@ -15,7 +15,6 @@ class Contact(Resource):
 
         rqp.add_argument("name", required=True, help="You need a name")
         rqp.add_argument("email", required=True, help="You need an email")
-        rqp.add_argument("subject")
         rqp.add_argument("message", required=True, help="Message is required")
 
         data = rqp.parse_args()
