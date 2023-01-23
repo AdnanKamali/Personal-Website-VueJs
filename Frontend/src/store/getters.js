@@ -8,7 +8,7 @@ const getters = {
         return state.isDark;
     },
     messageUrl(state){
-        return state.baseUrl + "/message";
+        return state.baseUrl + "/contact";
     }
 }
 export default getters;
