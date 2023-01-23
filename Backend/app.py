@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from resource.contact import Contact
+
 
 app = Flask(__name__)
 api = Api(app)
@@ -11,7 +11,8 @@ app.config['MONGODB_SETTINGS'] = {
     "db": "personal_website",
 }
 
-api.add_resource(Contact, "/contact")
 
 if __name__ == "__main__":
+    from resource.contact_resource import ContactResource
+    api.add_resource(ContactResource, "/contact")
     app.run(debug=True)

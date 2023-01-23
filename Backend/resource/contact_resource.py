@@ -1,13 +1,16 @@
 from flask_restful import Resource, reqparse
+from model.contact_model import ContactModel
 
 
-class Contact(Resource):
+class ContactResource(Resource):
     # TODO: authentication
     def get(self):
         try:
-            contacts = Contact.objects()
+            contacts = ContactModel.objects()
+            print(contacts)
             return {"contacts": contacts}, 200
-        except:
+        except Exception as e:
+            print(e)
             return {"error": "Some problem"}, 500
 
     def post(self):
@@ -19,7 +22,7 @@ class Contact(Resource):
 
         data = rqp.parse_args()
 
-        contact_message = Contact(**data)
+        contact_message = ContactModel(**data)
         try:
             contact_message.save()
             return {"message": "your message sended!!"}, 201
