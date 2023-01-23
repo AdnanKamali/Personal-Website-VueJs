@@ -8,7 +8,7 @@ api = Api(app)
 # config
 
 app.config['MONGODB_SETTINGS'] = {
-    "db": "",
+    "db": "personal_website",
 }
 
 
