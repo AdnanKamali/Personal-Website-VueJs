@@ -8,7 +8,7 @@ class ContactResource(Resource):
         try:
             contacts = ContactModel.objects()
             print(contacts)
-            return {"contacts": contacts}, 200
+            return {"contacts": [contact.json() for contact in contacts]}, 200
         except Exception as e:
             print(e)
             return {"error": "Some problem"}, 500
