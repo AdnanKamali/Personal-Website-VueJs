@@ -32,7 +32,6 @@
     </v-main>
 
     <AppBar />
-
   </v-app>
 
 
@@ -51,6 +50,7 @@ export default {
   provide(){
     return {
       breakePoint: this.cssClassResponsive,
+
     }
   },
   components: {

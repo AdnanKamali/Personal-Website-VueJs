@@ -9,6 +9,12 @@ const getters = {
     },
     messageUrl(state){
         return state.baseUrl + "/contact";
+    },
+    isMessageSended(state){
+        return state.isMessageSended;
+    },
+    isMessageSuccess(state){
+        return state.isMessageSuccsecc
     }
 }
 export default getters;

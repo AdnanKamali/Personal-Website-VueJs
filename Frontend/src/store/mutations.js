@@ -14,12 +14,10 @@ const mutations = {
     changeTheme(state){
         state.isDark = !state.isDark;
     },
-    sendedMessage(state, isSended){
-        state.isMessageSended = isSended;
-        console.log("Yep");
+    sendedMessage(state, isSuccess){
+        state.isMessageSuccsecc = isSuccess;
         setTimeout(function (){
-            state.isMessageSended = null;
-            console.log(state.isMessageSended);
+            state.isMessageSuccsecc = isSuccess;
         }, 5000);
     }
 }

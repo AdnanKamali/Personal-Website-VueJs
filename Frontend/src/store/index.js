@@ -9,7 +9,8 @@ const store = createStore({
         return {
             isDark: true,
             baseUrl: "http://127.0.0.1:5000",
-            isMessageSended: null,
+            isMessageSended: false,
+            isMessageSuccsecc: false,
         };
     },
     getters:getters,
