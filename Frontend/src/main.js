@@ -1,11 +1,9 @@
-import { createApp } from "vue";
+import {createApp} from "vue";
 
 import App from "./App.vue";
 import vuetify from "./vuetify.js";
 import store from "./store/index";
 import {MotionPlugin} from "@vueuse/motion";
-
-
 
 
 const app = createApp(App);

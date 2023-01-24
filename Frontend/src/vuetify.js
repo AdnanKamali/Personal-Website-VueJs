@@ -1,12 +1,12 @@
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
-import { createVuetify } from "vuetify";
+import {createVuetify} from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/components";
 import "vuetify/styles";
 
 // import 'material-design-icons-iconfont/dist/material-design-icons.css'
-import { aliases, md } from 'vuetify/iconsets/md'
+import {aliases, md} from 'vuetify/iconsets/md'
 
 const myCustomLightTheme = {
     dark: false,
@@ -41,5 +41,3 @@ export default createVuetify({
     components,
     directives,
 });
-
-// export default vuetify;

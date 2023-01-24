@@ -1,11 +1,11 @@
 const mutations = {
-    changeTheme(state){
+    changeTheme(state) {
         state.isDark = !state.isDark;
         localStorage.setItem("isDark", state.isDark);
     },
-    sendedMessage(state, isSuccess){
+    sendedMessage(state, isSuccess) {
         state.isMessageSuccsecc = isSuccess;
-        setTimeout(function (){
+        setTimeout(function () {
             state.isMessageSuccsecc = null;
         }, 5000);
     }

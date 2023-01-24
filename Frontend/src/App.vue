@@ -1,19 +1,19 @@
 <template>
   <v-app :theme="isDark? 'dark': 'myCustomLightTheme'">
     <v-main>
-  <v-container>
-  <transition name="first" appear>
-    <section  class="mb-15">
-      <WhoAmI/>
-    </section>
-  </transition>
-  </v-container>
-  <v-container>
+      <v-container>
+        <transition name="first" appear>
+          <section class="mb-15">
+            <WhoAmI/>
+          </section>
+        </transition>
+      </v-container>
+      <v-container>
 
-    <section id="info-sec"
-    v-motion
-    :initial="{opacity: 0, y:100}"
-    :visibleOnce="{
+        <section id="info-sec"
+                 v-motion
+                 :initial="{opacity: 0, y:100}"
+                 :visibleOnce="{
     y: 0,
     opacity: 1,
     transition: {
@@ -23,15 +23,15 @@
       mass: 3,
     },
   }"
-    >
-      <AboutMe id="AboutMe"/>
-      <MySkills id="MySkills"/>
-      <ContactPage id="ContactMe"/>
-    </section>
-  </v-container>
+        >
+          <AboutMe id="AboutMe"/>
+          <MySkills id="MySkills"/>
+          <ContactPage id="ContactMe"/>
+        </section>
+      </v-container>
     </v-main>
 
-    <AppBar />
+    <AppBar/>
   </v-app>
 
 
@@ -47,7 +47,7 @@ import {useDisplay} from "vuetify";
 import {mapGetters} from "vuex";
 
 export default {
-  provide(){
+  provide() {
     return {
       breakePoint: this.cssClassResponsive,
 
@@ -60,34 +60,36 @@ export default {
     MySkills,
     ContactPage,
   },
-  computed:{
+  computed: {
     ...mapGetters(["isDesktop", "isDark"]),
 
   },
-   methods: {
-     cssClassResponsive(desktop, mobile) {
-       const isDesktop = useDisplay().lgAndUp.value;
-       const style = {};
-       style[desktop] = isDesktop
-       style[mobile] = !isDesktop
-       return style;
-     },
-   }
+  methods: {
+    cssClassResponsive(desktop, mobile) {
+      const isDesktop = useDisplay().lgAndUp.value;
+      const style = {};
+      style[desktop] = isDesktop
+      style[mobile] = !isDesktop
+      return style;
+    },
+  }
 };
 </script>
 
 <style>
 
 
-.first-enter-from{
+.first-enter-from {
   opacity: 0;
   transform: translateY(60px);
 }
-.first-enter-to{
+
+.first-enter-to {
   opacity: 1;
   transform: translateY(0);
 }
-.first-enter-active{
+
+.first-enter-active {
   transition: all 0.4s ease-in;
 }
 </style>

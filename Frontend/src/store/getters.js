@@ -4,16 +4,16 @@ const getters = {
     isDesktop() {
         return useDisplay().lgAndUp.value;
     },
-    isDark(state){
+    isDark(state) {
         return state.isDark;
     },
-    messageUrl(state){
+    messageUrl(state) {
         return state.baseUrl + "/contact";
     },
-    isMessageSended(state){
+    isMessageSended(state) {
         return state.isMessageSended;
     },
-    isMessageSuccess(state){
+    isMessageSuccess(state) {
         return state.isMessageSuccsecc
     }
 }

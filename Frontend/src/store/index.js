@@ -5,17 +5,17 @@ import actions from "./actions.js";
 
 
 const store = createStore({
-    state(){
+    state() {
         return {
-            isDark: JSON.parse(localStorage.getItem("isDark"))??true,
+            isDark: JSON.parse(localStorage.getItem("isDark")) ?? true,
             baseUrl: "http://127.0.0.1:5000",
             isMessageSended: false,
             isMessageSuccsecc: false,
         };
     },
-    getters:getters,
-    mutations:mutations,
-    actions:actions,
+    getters: getters,
+    mutations: mutations,
+    actions: actions,
 })
 
 export default store;

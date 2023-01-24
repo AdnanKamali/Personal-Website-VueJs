@@ -1,10 +1,10 @@
 <template>
   <v-row justify="space-between" class="mt-4 mb-2">
     <v-col>
-      <h3>{{label}}</h3>
+      <h3>{{ label }}</h3>
     </v-col>
     <v-col align="end">
-      <p>{{percent}}%</p>
+      <p>{{ percent }}%</p>
     </v-col>
   </v-row>
 
@@ -16,15 +16,15 @@
 </template>
 
 <script>
-export default{
-  props:["label", "percent"],
-  data(){
+export default {
+  props: ["label", "percent"],
+  data() {
     return {
       isActive: false,
     }
   },
 
-  methods:{
+  methods: {
     scrollFunc() {
 
       const scrollY = window.scrollY;
@@ -44,17 +44,19 @@ export default{
 </script>
 
 <style scoped>
-.parent{
+.parent {
   width: 100%;
   background-color: rgba(98, 0, 238, 0.12);
   height: 10px;
 }
-.child{
+
+.child {
   width: 0;
   background-color: #6200ee;
   height: 100%;
 }
-.active{
+
+.active {
   transition: width 3s ease-out;
 }
 
