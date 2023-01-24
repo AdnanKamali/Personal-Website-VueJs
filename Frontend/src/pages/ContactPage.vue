@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <v-card class="mt-4">
     <v-card-title>
       CONTACT ME
@@ -17,7 +19,7 @@
                         v-model="payload.email"></v-text-field>
         </v-col>
         <v-col cols="12" sm="12">
-          <v-textarea :rules="[messageValidator]" label="Message" variant="outlined"
+          <v-textarea style="font-family: Vazirmatn" :rules="[messageValidator]" label="Message" variant="outlined"
                       v-model="payload.message"></v-textarea>
         </v-col>
         <v-col cols="4">
@@ -35,6 +37,7 @@
       Message Not Sended!
     </v-card-title>
   </v-snackbar>
+  </div>
 </template>
 
 <script>
@@ -123,3 +126,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500&display=swap');
+</style>

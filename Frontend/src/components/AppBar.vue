@@ -9,7 +9,7 @@
       >
         <v-list>
           <v-list-item
-              prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
+              :prepend-avatar="profileImage"
               title="Adnan Kamali"
               subtitle="adnankamali1246@gmailcom"
           ></v-list-item>
@@ -24,6 +24,7 @@
              :title="item.title"
              :prepend-icon="item.icon"
              :value="item.value"
+             :href="item.href"
           />
           <v-list-item
               :title="isDark?'Dark Mode':'Light Mode'"
@@ -40,9 +41,9 @@
 
 <!-- mobile nav -->
 
-  <v-app-bar  v-if="!isDesktop" elevation="0" color="rgba(0,0,0,0.2)" class=" justify-end">
+  <v-app-bar  v-if="!isDesktop" elevation="0" :color="isDark?'rgba(0,0,0,0.2)':'rgba(255,255,255,0.2)'" class=" justify-end">
     <v-avatar class="ml-3">
-      <v-img src="https://randomuser.me/api/portraits/women/85.jpg"> </v-img>
+      <v-img :src="profileImage"> </v-img>
     </v-avatar>
     <v-app-bar-title class="d-flex justify-start"> I'm Adnan </v-app-bar-title>
     <v-app-bar-nav-icon :icon="!drawer?'menu':'close'" @click.stop="drawer = !drawer" />
@@ -50,7 +51,7 @@
   <v-navigation-drawer v-if="!isDesktop" location="right" v-model="drawer" style="top:0;" class="fill-height pt-16">
     <v-list>
       <v-list-item
-        prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
+        :prepend-avatar="profileImage"
         title="Adnan Kamali"
         subtitle="adnankamali1246@gmail.com"
       ></v-list-item>
@@ -61,6 +62,7 @@
         :title="item.title"
         :append-icon="item.icon"
         :value="item.value"
+        :href="item.href"
       />
       <v-list-item
           :title="isDark?'Dark Mode':'Light Mode'"
@@ -81,10 +83,11 @@ export default {
   data() {
     return {
       drawer: false,
+      profileImage: "./src/assets/profile.jpg",
       items: [
-        { title: "My Background", value: "Dsh", icon: "person" },
-        { title: "Skills", value: "Sk", icon: "category" },
-        { title: "Contact Me", value: "As", icon: "contacts" },
+        { title: "My Background", icon: "person", href: "#AboutMe" },
+        { title: "Skills", icon: "category", href:"#MySkills" },
+        { title: "Contact Me", icon: "contacts", href: "#ContactMe" },
       ],
     };
   },

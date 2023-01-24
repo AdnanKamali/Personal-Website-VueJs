@@ -1,23 +1,12 @@
-import {useDisplay} from "vuetify";
-
 const mutations = {
-    cssClassResponsive(_,payload){
-        const desktop = payload[0];
-        const mobile = payload[1];
-        const isDesktop = useDisplay().lgAndUp.value;
-        const style = {};
-        style[desktop] = isDesktop
-        style[mobile] = !isDesktop
-        console.log(style);
-        return style;
-    },
     changeTheme(state){
         state.isDark = !state.isDark;
+        localStorage.setItem("isDark", state.isDark);
     },
     sendedMessage(state, isSuccess){
         state.isMessageSuccsecc = isSuccess;
         setTimeout(function (){
-            state.isMessageSuccsecc = isSuccess;
+            state.isMessageSuccsecc = null;
         }, 5000);
     }
 }

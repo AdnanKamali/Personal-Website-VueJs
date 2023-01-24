@@ -24,9 +24,9 @@
     },
   }"
     >
-      <AboutMe/>
-      <MySkills/>
-      <ContactPage/>
+      <AboutMe id="AboutMe"/>
+      <MySkills id="MySkills"/>
+      <ContactPage id="ContactMe"/>
     </section>
   </v-container>
     </v-main>
@@ -40,7 +40,7 @@
 <script>
 import AppBar from "./components/AppBar.vue";
 import WhoAmI from "./pages/WhoAmI.vue";
-import AboutMe from "./pages/AboutMe.vue";
+import AboutMe from "./pages/MyBackground.vue";
 import MySkills from "./pages/MySkills.vue";
 import ContactPage from "./pages/ContactPage.vue";
 import {useDisplay} from "vuetify";
@@ -77,10 +77,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500&display=swap');
-*{
-  font-family: Vazirmatn;
-}
+
 
 .first-enter-from{
   opacity: 0;

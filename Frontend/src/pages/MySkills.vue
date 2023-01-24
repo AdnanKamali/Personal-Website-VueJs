@@ -1,11 +1,15 @@
 <template>
-  <v-card class="ma-auto mt-3" :class="breakePoint('w-100', 'w-100')">
+  <v-card class="ma-auto mt-3 w-100" >
     <v-card-title>
       ― SKILLS
     </v-card-title>
     <v-card-text>
-      <ProgressBar label="Label One" :percent="60" />
-      <ProgressBar label="Label Two" :percent="26" />
+      <ProgressBar label="Python" :percent="70" />
+      <ProgressBar label="Flask" :percent="65" />
+      <ProgressBar label="Dart" :percent="65" />
+      <ProgressBar label="Flutter" :percent="75" />
+      <ProgressBar label="JavaScript" :percent="40" />
+      <ProgressBar label="Vue Js" :percent="50" />
     </v-card-text>
   </v-card>
 </template>
@@ -17,8 +21,5 @@ export default {
   components: {
     ProgressBar,
   },
-  inject: ["breakePoint"],
-
-
 }
 </script>
